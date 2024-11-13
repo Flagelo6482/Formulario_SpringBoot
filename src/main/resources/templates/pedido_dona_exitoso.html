@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedido de Dona Exitoso</title>
+</head>
+<body>
+
+    <div align="center">
+        <h2>Pedido Exitoso!</h2>
+        <span>Cantidad : </span><span th:text="${dona.cantidad}"></span><br>
+        <span>Sabor de dona(s) : </span><span th:text="${dona.sabor}"></span><br>
+        <span>Tamaño de dona(s) : </span><span th:text="${dona.tamaño}"></span><br>
+        <span>Relleno de dona(s)? : </span><span th:text="${dona.relleno}"></span><br>
+        <span>¿Lugar para comer? : </span><span th:text="${dona.lugarParaComer}"></span><br>
+
+        <div>
+            <a href="/">Ir al inicio</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de pedido de Donas</title>
+</head>
+<body>
+
+    <div align="center">
+        <h1>Ingrese su pedido de Dona(s)</h1>
+
+        <form th:action="@{/pedido}" method="post" th:object="${dona}">
+            <div>
+                <label>Cantidad de donas: </label>
+                <input type="number" th:field="*{cantidad}"><br/>
+            </div>
+            <div>
+                <label>Sabor de dona(s): </label>
+                <select th:field="*{sabor}">
+                    <option th:each="s : ${listaDeSabores}" th:value="${s}" th:text="${s}"></option>
+                </select>
+            </div>
+            <div>
+                <label>Tamaño de dona(s): </label>
+                <input type="radio" th:field="*{tamaño}" value="Pequeño">Pequeño
+                <input type="radio" th:field="*{tamaño}" value="Mediano">Mediano
+                <input type="radio" th:field="*{tamaño}" value="Grande">Grande
+            </div>
+            <div>
+                <label>Relleno : </label>
+                <input type="checkbox" th:field="*{relleno}">
+            </div>
+            <div>
+                <label>Lugar donde desea comer : </label>
+                <input type="radio" th:field="*{lugarParaComer}" value="Casa">Casa
+                <input type="radio" th:field="*{lugarParaComer}" value="En local">En local
+            </div>
+
+            <div>
+                <div></div>
+                <div><button type="submit">Realizar pedido!</button></div>
+                <div></div>
+            </div>
+        </form>
+        <div>
+            <a href="/">Ir al inicio</a>
+        </div>
+    </div>
+
+</body>
+</html>
